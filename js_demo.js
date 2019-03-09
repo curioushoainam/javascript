@@ -84,48 +84,57 @@
 
 //-------------------------------
 // Objects Mutation
-const o = {
-    a: 'a',
-    b: 'b',
-    obj: {
-        key: 'key',
-    }
-}
+// const o = {
+//     a: 'a',
+//     b: 'b',
+//     obj: {
+//         key: 'key',
+//     }
+// }
 
-// const o2 = o
-// o.a = 'new value'
-// console.log(o2.a)       // new value
+// // const o2 = o
+// // o.a = 'new value'
+// // console.log(o2.a)       // new value
 
-const o2 = Object.assign({}, o)
-// o.a = 'new value'
-// console.log(o2.a)            // a
-// o.obj.key = 'new value'
-// console.log(o2.obj.key)         // new value
+// const o2 = Object.assign({}, o)
+// // o.a = 'new value'
+// // console.log(o2.a)            // a
+// // o.obj.key = 'new value'
+// // console.log(o2.obj.key)         // new value
 
-//  deep copy
-function deepCopy(obj){
-    // check if vals are objects
-    // if so. copy that object (deep copy)
-    // else return the value
-    const keys = Object.keys(obj)
+// //  deep copy
+// function deepCopy(obj){
+//     // check if vals are objects
+//     // if so. copy that object (deep copy)
+//     // else return the value
+//     const keys = Object.keys(obj)
 
-    const newObject = {}
+//     const newObject = {}
 
-    for (let i = 0; i < keys.length; i++){
-        const key = keys[i]
-        if(typeof obj[key] === 'object') {
-            newObject[key] = deepCopy(obj[key])
-        } else {
-            newObject[key] = obj[key]
-        }
-    }
+//     for (let i = 0; i < keys.length; i++){
+//         const key = keys[i]
+//         if(typeof obj[key] === 'object') {
+//             newObject[key] = deepCopy(obj[key])
+//         } else {
+//             newObject[key] = obj[key]
+//         }
+//     }
 
-    return newObject
-}
+//     return newObject
+// }
 
-const o3 = deepCopy(o)
-o.obj.key = 'new value!'
-console.log(o3.obj.key)         // key
+// const o3 = deepCopy(o)
+// o.obj.key = 'new value!'
+// console.log(o3.obj.key)         // key
 
+//-------------------------------
+// // Prototypal Inheritance
+const arr = []
+arr.push('value')
+// console.log(arr)
 
+const str = "string"
+str.toUpperCase()
+console.log(str)
 
+arr.__proto__
