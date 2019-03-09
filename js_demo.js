@@ -135,6 +135,48 @@ arr.push('value')
 
 const str = "string"
 str.toUpperCase()
-console.log(str)
+// console.log(str)
 
 arr.__proto__
+
+//-------------------------------
+// SCOPE
+console.log(thisIsVar)          // without hoisting
+thisIsHoisted()                 // function hoisting
+// thisIsNotHosted()            // not hoisted
+
+// const is not available until it is declared
+// let : variable does not exist until it is declared so this is not hoisted 
+// var : declared but didn't assign at all
+
+const thisIsAConst = 50
+// thisIsAConst ++             // error
+
+let thisIsALet = 50
+thisIsALet++                    // 51
+console.log(thisIsALet)
+
+const constOjb = {}
+constOjb.a = 'a'
+console.log(constOjb)
+
+// let thisIsALet = 51             // errors due to declare 2 variables the same name
+thisIsALet = 60
+
+var thisIsVar = 50
+thisIsVar = 51
+var thisIsVar = 50
+// console.log(thisIsVar)
+
+function thisIsHoisted(){
+    console.log("this is a func that was declared at the bottom of file")
+}
+
+const thisIsNotHosted = function(){
+    console.log('should not be hoisted ?')
+}
+
+var thisIsNotHosted = function(){
+    console.log('should not be hoisted ?')
+}
+thisIsNotHosted()
